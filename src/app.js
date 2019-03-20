@@ -8,6 +8,8 @@ const forecast = require('./utils/forecast');
 
 // call the express function to make application.
 const app = express();
+// environment variable
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -122,7 +124,7 @@ app.get('*', (req, res) => {
 })
 
 // turn the server on 
-app.listen(3000, () => {
-    console.log('Server is Running');
+app.listen(port, () => {
+    console.log('Server is Running' + port);
 })
 
