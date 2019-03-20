@@ -9,7 +9,7 @@ const forecast = (lat, lng, callback) => {
         } else if (body.error) {
             callback('Unable to find location. Try another search', undefined);
         } else {
-            callback(undefined, `It is currently ${body.currently.apparentTemperature} degrees.There is ${body.currently.precipProbability}% chance of rain`);
+            callback(undefined, `It is currently ${body.currently.apparentTemperature} degrees.There is ${body.currently.precipProbability}% chance of rain. Wind speed is ${body.currently.windSpeed}`);
         }
     });
 
